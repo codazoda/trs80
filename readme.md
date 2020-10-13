@@ -105,4 +105,7 @@ Next I render multiple graphics images on alternating graphics pages and switch 
 
 ## References
 
+- [Color Computer Archive](https://colorcomputerarchive.com/)
 - [Color BASIC on Wikipedia (Full Language Quick Reference)](https://en.wikipedia.org/wiki/Color_BASIC)
+- [Build Your Own Data Cassette Cable for Your TRS-80](https://www.8bit-micro.com/build-your-own-data-cassette-cable-for-your-trs-80/)
+- [JS Mocha Web Based Emulator](http://www.haplessgenius.com/mocha/)
