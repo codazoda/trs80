@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+
+<head>
+
+    <title>To Array</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h1>To Array</h1>
+
+    <p>This util will convert an image to an array of pixels and then to a set 
+    basic program listing of DATA statements (see the console).</p>
+
+    <canvas id="image" width="128" height="96"></canvas>
+
+    <script type="text/javascript">
+        // Setup some variables
+        imageFile = "../image/slot.png";
+        startX = 3;
+        startY = 7;
+        endX = 33;
+        endY = 96;
+        // Draw the image on the canvas
+        var canvas = document.getElementById('image'),
+        context = canvas.getContext('2d');
+        imageElement = new Image();
+        imageElement.src = imageFile;
+        var pixels = [];
+        imageElement.onload = function() {
+            context.drawImage(imageElement, 0, 0);
+            // Wait a bit for the image and then output the pixels
+            setTimeout(function() {
+                for(y=startY; y<endY; y++) {
+                    for(x=startX; x<endX; x++) {
+                        pixel = context.getImageData(x, y, 1, 1).data;
+                        pixelStr = pixel[0] + ',' + pixel[1] + ',' + pixel[2];
+                        switch(pixelStr) {
+                            case '255,255,255':
+                                color = 0;
+                                break;
+                            case '255,85,255':
+                                color = 1;
+                                break;
+                            case '85,255,255':
+                                color = 2;
+                                break;
+                            default:
+                                color = pixelStr;
+                        }
+                        pixels.push(color);
+                        context.fillStyle = "black";
+                        context.fillRect(x, y, 1, 1);
+                    }
+                }
+                let outputLine = "";
+                let dataDump = "";
+                let lineNumber = 1000;
+                const columns = endX - startX;
+                const rows = Math.ceil(pixels.length / columns);
+                for (row=0; row<rows; row++) {
+                    dataLine = lineNumber + " DATA ";
+                    lineNumber = lineNumber + 10;
+                    for (col=0; col<columns; col++) {
+                        dataLine = dataLine + pixels.shift() + ',';
+                    }
+                    dataLine = dataLine.slice(0, -1);
+                    dataDump = dataDump + dataLine + "\n";
+                };
+               console.log(dataDump);
+            }, 3000);
+        };
+    </script>
+
+</body>
+
+</html>
