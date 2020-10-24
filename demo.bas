@@ -1,49 +1,55 @@
-1000 rem first title screen
-1010 t1$ = "TRS-80 DEMO"
-1020 t2$ = ""
-1030 gosub 2000
-1040 t1$ = "CREATED BY"
-1050 t2$ = "JOEL DARE"
-1060 gosub 2000
-1070 gosub 3000
-1080 end
-2000 rem create title screen
-2010 cls
-2020 rem print 5 blank lines
-2030 for i = 1 to 5
-2040 print
-2050 next i
-2060 rem center text
-2070 sc = int((32 - len(t1$)) / 2)
-2080 print tab(sc) t1$
-2090 sc = int((32 - len(t2$)) / 2)
-2100 print tab(sc) t2$
-2110 rem pause for 3 seconds
-2120 for i = 1 to 460 * 3
-2130 next i
-2140 return
-3000 print "     +"
-3010 print "    / \"
-3020 print "   !   !"
-3030 print "   !   !"
-3040 print "   ! U !"
-3050 print "   ! S !"
-3060 print "   ! A !"
-3070 print "   !   !"
-3080 print "   !   !"
-3090 print "   !   !"
-3100 print "   !   !"
-3110 print "  /     \"
-3120 print " /       \"
-3130 print "!         !"
-3140 print "!         !"
-3150 print "!         !"
-3160 print " \       /"
-3165 print "  '-----'"
-3170 print "     /\"
-3180 print "    /  \"
-3190 print "   ! /\ !"
-3200 print "    \  /"
-3210 print "     !!"
-3220 print "     !!"
-3230 print "     !!"
+1000 REM FIRST TITLE SCREEN
+1010 T1$ = "TRS-80 DEMO"
+1020 T2$ = ""
+1030 GOSUB 2000
+1040 T1$ = "CREATED BY"
+1050 T2$ = "JOEL DARE"
+1060 GOSUB 2000
+1070 CLS:GOSUB 3000
+1080 END
+2000 REM CREATE TITLE SCREEN
+2010 CLS
+2020 REM PRINT 5 BLANK LINES
+2030 FOR I = 1 TO 5
+2040 PRINT
+2050 NEXT I
+2060 REM CENTER TEXT
+2070 SC = INT((32 - LEN(T1$)) / 2)
+2080 PRINT TAB(SC) T1$
+2090 SC = INT((32 - LEN(T2$)) / 2)
+2100 PRINT TAB(SC) T2$
+2110 REM PAUSE FOR 3 SECONDS
+2120 FOR I = 1 TO 460 * 3
+2130 NEXT I
+2140 RETURN
+3000 FOR I = 1 TO 17
+3007 PRINT
+3008 NEXT
+3009 PRINT TAB(10) "     +"
+3010 PRINT TAB(10) "    / \"
+3020 PRINT TAB(10) "   !   !"
+3030 PRINT TAB(10) "   !   !"
+3040 PRINT TAB(10) "   ! U !"
+3050 PRINT TAB(10) "   ! S !"
+3060 PRINT TAB(10) "   ! A !"
+3070 PRINT TAB(10) "   !   !"
+3080 PRINT TAB(10) "   !   !"
+3090 PRINT TAB(10) "   !   !"
+3100 PRINT TAB(10) "   !   !"
+3110 PRINT TAB(10) "  /     \"
+3120 PRINT TAB(10) " /       \"
+3130 FOR I = 1 TO 10
+3140 PRINT TAB(10) "!         !"
+3150 NEXT
+3160 PRINT TAB(10) " \       /"
+3165 PRINT TAB(10) "  '-----'"
+3170 PRINT TAB(10) "    / \"
+3180 PRINT TAB(10) "   /   \"
+3190 PRINT TAB(10) "  !  !  !"
+3200 PRINT TAB(10) "   \ ! /"
+3210 PRINT TAB(10) "    ! !"
+3220 PRINT TAB(10) "     !"
+3230 PRINT TAB(10) "     !"
+3240 FOR I = 1 TO 17
+3250 PRINT
+3260 NEXT

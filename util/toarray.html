@@ -41,13 +41,13 @@
                         pixelStr = pixel[0] + ',' + pixel[1] + ',' + pixel[2];
                         switch(pixelStr) {
                             case '255,255,255':
-                                color = 0;
-                                break;
-                            case '255,85,255':
                                 color = 1;
                                 break;
-                            case '85,255,255':
+                            case '255,85,255':
                                 color = 2;
+                                break;
+                            case '85,255,255':
+                                color = 3;
                                 break;
                             default:
                                 color = pixelStr;
